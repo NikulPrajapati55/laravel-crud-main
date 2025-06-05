@@ -76,6 +76,7 @@ class guestController extends Controller
         $guestdatas->amount = $days * 2400;
         $guestdatas->payment_mode = $request->payment_mode;
         $guestdatas->customer_email = $request->customer_email;
+        $guestdatas->otp = $otp;
         $guestdatas->save();
 
         Mail::to($request->customer_email)->send(

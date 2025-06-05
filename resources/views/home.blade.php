@@ -451,7 +451,7 @@
                     <h2>SURPRISE YOUR LOVED ONES WITH HOTEL CRUISE GIFT CARDS.</h2>
                     <p>Sed gravida fringilla malesuada vel eleifend enim urna maecenas id. Neque turpis volutpat mollis donec odio velit faucibus. Non nibh dapibus faucibus diam fringilla volutpat sollicitudin.</p>
                     <div class="gift__btn ">
-                        <a href="{{ route('hotel-details') }}" class="btn bg--orange btn--big ">Join your Tearm</a>
+                        <a href="#" class="btn bg--orange btn--big ">Join your Tearm</a>
                     </div>
                 </div>
             </div>
