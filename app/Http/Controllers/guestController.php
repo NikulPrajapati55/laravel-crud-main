@@ -78,7 +78,13 @@ class guestController extends Controller
         $guestdatas->customer_email = $request->customer_email;
         $guestdatas->save();
 
-        Mail::to($request->customer_email)->send(new \App\Mail\SendOtpMail($request->customer_name, $otp));
+        Mail::to($request->customer_email)->send(
+    new \App\Mail\SendOtpMail(
+        $request->customer_name,
+        $otp,
+        $request->room_number
+    )
+    );
         return redirect()->route('bils')->with([
             'success' => 'Visitor added successfully!',
         ]);
