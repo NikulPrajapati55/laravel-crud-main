@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Guest;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
 
 class guestController extends Controller
 {
@@ -65,6 +66,7 @@ class guestController extends Controller
         if ($days == 0) {
             $days = 1;
         }
+           $otp = rand(1000, 9999);
 
         $guestdatas = new Guest();
         $guestdatas->customer_name = $request->customer_name;
@@ -76,6 +78,7 @@ class guestController extends Controller
         $guestdatas->customer_email = $request->customer_email;
         $guestdatas->save();
 
+        Mail::to($request->customer_email)->send(new \App\Mail\SendOtpMail($request->customer_name, $otp));
         return redirect()->route('bils')->with([
             'success' => 'Visitor added successfully!',
         ]);

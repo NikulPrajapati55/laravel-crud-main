@@ -83,7 +83,13 @@
             </li>
             <li>
                 <a href="#" class="nav-link text-white">
-                    <i class="bi bi-box-arrow-right me-2"></i> Logout
+                    <i class="bi bi-box-arrow-right me-2"></i>
+                    <form method="POST" action="{{ route('logout') }}"
+                        onsubmit="return confirm('Are you sure you want to logout?');">
+                        @csrf
+                        <button type="submit">Logout</button>
+                    </form>
+
                 </a>
             </li>
         </ul>

@@ -7,6 +7,7 @@ use App\Http\Controllers\visitorController;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\guestController;
 use App\Http\Controllers\logindataController;
+use App\Http\Controllers\UserController;
 use App\Http\Middleware\FilterData;
 
 
@@ -62,6 +63,7 @@ Route::post('/veroficationlogin',[logindataController::class, 'veroficationlogin
 
 
 Route::middleware(['filterdata'])->group(function () { Route::view('/dashboard', 'dashboard')->name('dashboard'); });
+Route::post('/logout', [UserController::class, 'destroy'])->name('logout');
 
 
 
