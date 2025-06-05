@@ -9,11 +9,11 @@
             </div>
         @endif
         <main class="site-main">
-            <section class="section pt-2">
-                <div class="wrap">
+            <section class="section pt-0">
+                <div class="wrap-fuild">
                     <div class="row">
                         @include('components.hotel-menubar')
-                        <div class="col-9 mt-2">
+                        <div class="col-9 pt-5">
                             <div class="section__title">
                                 <h1 class="text-dark">Hotel Visitors</h1>
                             </div>

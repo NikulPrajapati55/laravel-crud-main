@@ -4,12 +4,12 @@
     @endsection
 
     @section('content')
-        <section class="section pt-2">
-            <div class="wrap">
+        <section class="section pt-0">
+            <div class="wrap-fuild">
                 <div class="row">
                     @include('components.hotel-menubar')
 
-                    <div class="col-9 mt-2">
+                    <div class="col-9 pt-5">
                         <div class="bils-detail d-flex justify-content-between align-items-center">
                             <h2 class="mb-0">Payment Summary</h2>
                             <div class="d-flex gap-2">

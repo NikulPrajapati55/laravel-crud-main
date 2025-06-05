@@ -3,11 +3,11 @@
         <title>Bills</title>
     @endsection
     @section('content')
-        <section class="section pt-2">
-            <div class="wrap">
+        <section class="section pt-0">
+            <div class="wrap-fuild">
                 <div class="row">
                     @include('components.hotel-menubar')
-                    <div class="col-9 mt-2">
+                    <div class="col-9 pt-5">
                         <div class="bils-detail d-flex justify-content-between">
                             <div class="bils-detail-heding">
                                 <h2>

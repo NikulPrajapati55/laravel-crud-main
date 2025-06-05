@@ -4,20 +4,17 @@
     @endsection
 
     @section('content')
-        <section class="section pt-5">
-            <div class="wrap">
+        <section class="section pt-0">
+            <div class="wrap-fuild">
                 <div class="row">
-                    <!-- Sidebar -->
                         @include('components.hotel-menubar')
-
-                    <!-- Main Content -->
-                    <div class="col-9">
+                    <div class="col-9 pt-5">
                         <h1 class="mb-4 text-dark">Welcome to Dashboard</h1>
                         <div class="card shadow-sm">
                             <div class="card-body">
-                              <div class="chart ">
+                              {{-- <div class="chart ">
                                         <canvas id="paymentChart"></canvas>
-                                    </div>
+                                    </div> --}}
                             </div>
                         </div>
                     </div>

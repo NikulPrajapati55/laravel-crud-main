@@ -8,11 +8,11 @@
                 <strong>{{ $message }}</strong>
             </div>
         @endif
-        <section class="section section--employe">
-            <div class="wrap">
+        <section class="section section--employe pt-0">
+            <div class="wrap-fuild">
                 <div class="row justify-content-center">
                     @include('components.hotel-menubar')
-                    <div class="col-9">
+                    <div class="col-9 pt-5">
                         <div class="section__title">
                             <h1 class="text-dark">Add New Employe</h1>
                         </div>
