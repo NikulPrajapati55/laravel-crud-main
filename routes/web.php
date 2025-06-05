@@ -9,6 +9,7 @@ use App\Http\Controllers\guestController;
 use App\Http\Controllers\logindataController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\FilterData;
+use App\Http\Controllers\StoreDataController;
 
 
 
@@ -25,6 +26,7 @@ Route::view('/blog-detail', 'blog-detail')->name('blog-detail');
 Route::view('/faq', 'faq')->name('faq');
 Route::view('/room-detail', 'room-detail')->name('room-detail');
 Route::view('/review', 'review')->name('review');
+Route::view('/store', 'store')->name('store');
 Route::post('/mail-send', [EmailController::class, 'mailsubmit'])->name('mail');
 
 
@@ -52,6 +54,12 @@ Route::middleware(['filterdata'])->group(function () {
     Route::get('/bills/paymentbill', [guestController::class, 'paymentbills'])->name('paymentbills');
     Route::post('/bills/bills-new', [guestController::class, 'billsnew'])->name('billsnew');
     Route::post('/available-rooms', [guestController::class, 'getAvailableRooms'])->name('available.rooms');
+
+
+    Route::post('/store/productadd',       [StoreDataController::class, 'storeproductadd'])->name('productadd');
+    Route::get('/store/storedata',       [StoreDataController::class, 'storestoredata'])->name('storedata');
+
+
 });
 
 // login
