@@ -61,7 +61,7 @@ Route::post('/login/newlogin',[logindataController::class, 'newlogin'])->name('n
 Route::post('/veroficationlogin',[logindataController::class, 'veroficationlogin'])->name('veroficationlogin');
 
 
-Route::middleware(['filterdata'])->group(function () { Route::view('/', 'dashboard')->name('dashboard'); });
+Route::middleware(['filterdata'])->group(function () { Route::view('/dashboard', 'dashboard')->name('dashboard'); });
 
 
 

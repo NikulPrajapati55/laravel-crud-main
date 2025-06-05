@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-dashboard>
     @section('meta')
         <title>Bills</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -130,4 +130,4 @@
 
 </script>
     @endsection
-</x-app-layout>
+</x-admin-dashboard>

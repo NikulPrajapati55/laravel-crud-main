@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-dashboard>
     @section('meta')
         <title>Payment Summary</title>
     @endsection
@@ -47,14 +47,14 @@
                                                     @foreach ($paymentSums as $sum)
                                                         <tr class="table-info">
                                                             <td colspan="7" class="text-end fw-bold">
-                                                                {{ ucfirst($sum->payment_mode) }} Total 
+                                                                {{ ucfirst($sum->payment_mode) }} Total
                                                             </td>
                                                             <td class="fw-bold text-success">
                                                                 ₹{{ number_format($sum->total, 0) }}</td>
                                                         </tr>
                                                     @endforeach
                                                     <tr class="table-success">
-                                                        <td colspan="7" class="text-end fw-bold">Grand Total 
+                                                        <td colspan="7" class="text-end fw-bold">Grand Total
                                                         </td>
                                                         <td class="fw-bold text-primary">
                                                             ₹{{ number_format($paymentSums->sum('total'), 0) }}</td>
@@ -105,4 +105,4 @@
             });
         </script>
     @endsection
-</x-app-layout>
+</x-admin-dashboard>

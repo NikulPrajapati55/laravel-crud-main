@@ -93,5 +93,5 @@ class guestController extends Controller
 
         return response()->json(array_values($availableRooms));
     }
-    
+
 }
