@@ -21,7 +21,17 @@ class guestController extends Controller
             'paymentSums' => $paymentSums
         ]);
     }
+    // public function dashboard()
+    // {
+    //     $paymentSums = DB::table('guest')
+    //         ->select('payment_mode', DB::raw('SUM(amount) as total'))
+    //         ->groupBy('payment_mode')
+    //         ->get();
 
+    //     return view('dashboard', [
+    //         'paymentSums' => $paymentSums
+    //     ]);
+    // }
     public function guestadd()
     {
         return view('bills.addbils');
@@ -93,5 +103,4 @@ class guestController extends Controller
 
         return response()->json(array_values($availableRooms));
     }
-
 }
