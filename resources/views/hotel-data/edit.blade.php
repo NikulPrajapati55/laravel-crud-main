@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-dashboard>
     @section('meta')
         <title>New-employe</title>
     @endsection
@@ -9,7 +9,7 @@
             </div>
         @endif
         <section class="section section--employe pt-2">
-            <div class="wrap">                
+            <div class="wrap">
                 <div class="row justify-content-center">
                     @include('components.hotel-menubar')
                     <div class="col-9">
@@ -21,7 +21,7 @@
                                 <a href="{{ route('hotel-details')}}" class="btn btn-primary btn--hover-orange">All Employe Data</a>
                             </div>
                         </div>
-                        <div class="form__data card p-4">                            
+                        <div class="form__data card p-4">
                             <h3> Employe Name {{$HotelDetail->name}}</h3>
                             <form method="POST" action="{{ route('update', $HotelDetail->id)}}">
                                 @csrf
@@ -62,4 +62,4 @@
             </div>
         </section>
     @endsection
-</x-app-layout>
+</x-admin-dashboard>

@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-dashboard>
     @section('meta')
         <title>Login page</title>
     @endsection
@@ -28,7 +28,7 @@
                                                 @if (session('error'))
                                                     <div class="alert alert-danger">
                                                         {{ session('error') }}
-                                                    </div>  
+                                                    </div>
                                                 @endif
                                             </div>
                                             <div class="login-input mt-4 d-flex justify-content-between gap-2">
@@ -94,4 +94,4 @@
             </section>
         </main>
     @endsection
-</x-app-layout>
+</x-admin-dashboard>

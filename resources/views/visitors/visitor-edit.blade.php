@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-dashboard>
     @section('meta')
         <title>Visitor Add</title>
     @endsection
@@ -45,4 +45,4 @@
             </div>
         </section>
     @endsection
-</x-app-layout>
+</x-admin-dashboard>

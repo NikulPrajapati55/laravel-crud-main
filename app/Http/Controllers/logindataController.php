@@ -39,7 +39,7 @@ class logindataController extends Controller
 
         if ($user && $verifypassword === $user->user_password) {
             Auth::login($user);
-            return redirect()->route('home');
+            return redirect()->route('dashboard');
         } else {
             return redirect()->route('login')->with('error', 'Invalid credentials');
         }

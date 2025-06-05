@@ -1,11 +1,11 @@
-<x-app-layout>
+<x-admin-dashboard>
     @section('meta')
         <title>Hotel Details</title>
     @endsection
     @section('content')
         <main class="site-main">
             <section class="section pt-2">
-                <div class="wrap">                  
+                <div class="wrap">
                     <div class="row">
                         @include('components.hotel-menubar')
                         <div class="col-9 mt-2">
@@ -16,7 +16,7 @@
                                 <div class="col-12 text-end mb-2">
                                     <a href="{{ route('newemploye') }}" class="btn btn-primary  btn--hover-orange" >add employe</a>
                                 </div>
-                            </div>               
+                            </div>
                             <table class="table table-striped table-bordered table-hover">
                                 <thead class="table-dark">
                                     <tr>
@@ -45,11 +45,11 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            
+
                         </div>
                     </div>
                 </div>
             </section>
         </main>
     @endsection
-</x-app-layout>
+</x-admin-dashboard>

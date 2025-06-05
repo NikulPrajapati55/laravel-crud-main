@@ -15,7 +15,7 @@ Route::get('/optimizeapp', function () {
     Artisan::call('optimize:clear');
     return "application optimize successfully !!";
 });
-Route::middleware(['filterdata'])->group(function () { Route::view('/', 'home')->name('home'); });
+Route::view('/','home')->name('home');
 Route::view('/about','about')->name('about');
 Route::view('/rooms','rooms')->name('rooms');
 Route::view('/resources','resources')->name('resources');
@@ -59,6 +59,10 @@ Route::post('/available-rooms', [guestController::class, 'getAvailableRooms'])->
 Route::view('/login','login.login')->name('login');
 Route::post('/login/newlogin',[logindataController::class, 'newlogin'])->name('newlogin');
 Route::post('/veroficationlogin',[logindataController::class, 'veroficationlogin'])->name('veroficationlogin');
+
+
+Route::middleware(['filterdata'])->group(function () { Route::view('/', 'dashboard')->name('dashboard'); });
+
 
 
 

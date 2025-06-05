@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-dashboard>
     @section('meta')
         <title>New-employe</title>
     @endsection
@@ -56,4 +56,4 @@
             </div>
         </section>
     @endsection
-</x-app-layout>
+</x-admin-dashboard>

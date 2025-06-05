@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-dashboard>
     @section('meta')
         <title>Visitor Add</title>
     @endsection
@@ -23,7 +23,7 @@
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" name="name_visitor" id="name"
-                                    class="form-control @error('name_visitor') is-invalid @enderror" 
+                                    class="form-control @error('name_visitor') is-invalid @enderror"
                                     value="{{ old('name') }}">
                                 @error('name_visitor')
                                     <div class="invalid-feedback">{{ $message }}</div>
@@ -44,4 +44,4 @@
             </div>
         </section>
     @endsection
-</x-app-layout>
+</x-admin-dashboard>
