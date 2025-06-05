@@ -29,6 +29,7 @@
                                                     <div class="alert alert-danger">
                                                         {{ session('error') }}
                                                     </div>
+
                                                 @endif
                                             </div>
                                             <div class="login-input mt-4 d-flex justify-content-between gap-2">

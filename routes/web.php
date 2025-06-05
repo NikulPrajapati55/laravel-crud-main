@@ -62,3 +62,4 @@ Route::post('/veroficationlogin', [logindataController::class, 'veroficationlogi
 
 
 Route::post('/logout', [UserController::class, 'destroy'])->name('logout');
+
