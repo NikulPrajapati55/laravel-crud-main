@@ -10,9 +10,12 @@ use Illuminate\Support\Facades\Auth;
 
 class StoreDataController extends Controller
 {
- public function storeproductadd(Request $request)
+ public function storeproductadd()
  {
 
     return view('store.productadd');
  }
+ public function storeproductnew(Request $request)
+
+{}
 }

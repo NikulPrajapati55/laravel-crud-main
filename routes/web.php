@@ -56,8 +56,10 @@ Route::middleware(['filterdata'])->group(function () {
     Route::post('/available-rooms', [guestController::class, 'getAvailableRooms'])->name('available.rooms');
 
 
-    Route::post('/store/productadd',       [StoreDataController::class, 'storeproductadd'])->name('productadd');
     Route::get('/store/storedata',       [StoreDataController::class, 'storestoredata'])->name('storedata');
+    Route::get('/store/productadd',       [StoreDataController::class, 'storeproductadd'])->name('productadd');
+    Route::post('/store/productnew',       [StoreDataController::class, 'storeproductnew'])->name('productnew');
+
 
 
 });
