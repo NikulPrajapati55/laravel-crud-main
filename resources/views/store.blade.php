@@ -90,7 +90,7 @@
             .custom-product-img {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                object-fit: contain;
                 transition: filter 0.2s;
             }
 

@@ -56,13 +56,17 @@ Route::middleware(['filterdata'])->group(function () {
     Route::post('/bills/bills-new', [guestController::class, 'billsnew'])->name('billsnew');
     Route::post('/available-rooms', [guestController::class, 'getAvailableRooms'])->name('available.rooms');
 
-    
+
 
     Route::get('/allproduct',[productController::class, 'allproduct'])->name('allproduct');
     Route::get('/newproduct',[productController::class, 'newproduct'])->name('newproduct');
     Route::post('/add-newproduct', [productController::class, 'addproduct'])->name('addproduct');
+    Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+    Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
+    Route::delete('/product/delete/{id}', [ProductController::class, 'destroy'])->name('product.delete');
 
-    
+
+
 
 });
 

@@ -44,4 +44,19 @@ class productController extends Controller
 
         return redirect()->route('allproduct')->with('success', 'Product added successfully.');
     }
+    public function edit($id)
+    {
+        return StoreData::findOrFail($id);
+    }
+    public function update(Request $request, $id)
+    {
+        $product = StoreData::findOrFail($id);
+        $product->update($request->only(['product_name', 'product_price', 'product_total', 'product_status']));
+        return response()->json(['status' => 'success']);
+    }
+    public function destroy($id)
+    {
+        StoreData::destroy($id);
+        return response()->json(['status' => 'deleted']);
+    }
 }
