@@ -4,12 +4,12 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
     @endsection
     @section('content')
-        <section class="section pt-0">
+        <section class="section pt-0 ">
             <div class="wrap-fuild">
                 <div class="row">
                     @include('components.hotel-menubar')
-                    <div class="col-9 pt-5">
-                        <div class="bils-detail d-flex justify-content-between">
+                    <div class="col-9 pt-5" style="overflow-y:scroll; height:100vh" >
+                        <div class="justify-content-between d-flex " >
                             <div class="bils-detail-heding">
                                 <h2>
                                     Add New bils

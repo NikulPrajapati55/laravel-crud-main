@@ -23,6 +23,9 @@
                             <a href="{{ route('resources') }}">RESOURCES</a>
                         </li>
                         <li>
+                            <a href="{{ route('store') }}">Store</a>
+                        </li>
+                        <li>
                             <a href="{{ route('contact') }}" >contact us <span></span></a>
                         </li>
                          <li>

@@ -9,7 +9,8 @@ use App\Http\Controllers\guestController;
 use App\Http\Controllers\logindataController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\FilterData;
-use App\Http\Controllers\StoreDataController;
+use App\Http\Controllers\productController;
+
 
 
 
@@ -55,12 +56,13 @@ Route::middleware(['filterdata'])->group(function () {
     Route::post('/bills/bills-new', [guestController::class, 'billsnew'])->name('billsnew');
     Route::post('/available-rooms', [guestController::class, 'getAvailableRooms'])->name('available.rooms');
 
+    
 
-    Route::get('/store/storedata',       [StoreDataController::class, 'storestoredata'])->name('storedata');
-    Route::get('/store/productadd',       [StoreDataController::class, 'storeproductadd'])->name('productadd');
-    Route::post('/store/productnew',       [StoreDataController::class, 'storeproductnew'])->name('productnew');
+    Route::get('/allproduct',[productController::class, 'allproduct'])->name('allproduct');
+    Route::get('/newproduct',[productController::class, 'newproduct'])->name('newproduct');
+    Route::post('/add-newproduct', [productController::class, 'addproduct'])->name('addproduct');
 
-
+    
 
 });
 
@@ -68,8 +70,5 @@ Route::middleware(['filterdata'])->group(function () {
 Route::view('/login', 'login.login')->name('login');
 Route::post('/login/newlogin', [logindataController::class, 'newlogin'])->name('newlogin');
 Route::post('/veroficationlogin', [logindataController::class, 'veroficationlogin'])->name('veroficationlogin');
-
-
-
 Route::post('/logout', [UserController::class, 'destroy'])->name('logout');
 

@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class storeData extends Model
 {
-      protected $table = 'storedata';
-  protected $fillable = ['product_name', 'product_price', 'product_availeble'];
+   protected $table = 'hotel_product';
+  protected $fillable = ['product_name', 'product_category', 'product_img', 'product_price', 'product_total', 'product_status'];
 }

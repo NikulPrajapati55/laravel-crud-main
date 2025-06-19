@@ -18,7 +18,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('storedata') }}" class="nav-link text-white">
+                <a href="{{ route('allproduct') }}" class="nav-link text-white">
                     <i class="bi bi-shop me-2"></i> Store
                 </a>
             </li>
