@@ -2153,10 +2153,6 @@ textarea.form-control {
 
 /**/
 
-body.loading {
-    overflow: hidden;
-}
-
 .wrapper {
     display: none;
 }

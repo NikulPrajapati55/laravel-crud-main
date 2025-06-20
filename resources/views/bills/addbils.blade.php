@@ -8,7 +8,7 @@
             <div class="wrap-fuild">
                 <div class="row">
                     @include('components.hotel-menubar')
-                    <div class="col-9 pt-5" style="overflow-y:scroll; height:100vh" >
+                    <div class="col-9 pt-5" >
                         <div class="justify-content-between d-flex " >
                             <div class="bils-detail-heding">
                                 <h2>

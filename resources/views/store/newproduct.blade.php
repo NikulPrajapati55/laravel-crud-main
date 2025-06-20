@@ -25,7 +25,7 @@
                                             name="product_name" required maxlength="255" placeholder="Enter product name">
                                     </div>
                                     <div class="mb-4">
-                                        <label for="category" class="form-label fw-semibold text-primary">Category</label>
+                                       <label for="category" class="form-label fw-semibold text-primary">Category</label>
                                         <select class="form-select bg-light" id="category" name="product_category"
                                             required>
                                             <option value="" disabled selected>Select category</option>
@@ -75,6 +75,38 @@
                     </div>
                 </div>
             </div>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script>
+                $('#addCategoryForm').on('submit', function(e) {
+                    e.preventDefault();
+                    let categoryName = $(this).find('input[name="category_name"]').val();
+
+                    $.ajax({
+                        url: '{{ route('add.category') }}',
+                        method: 'POST',
+                        data: {
+                            category_name: categoryName,
+                            _token: '{{ csrf_token() }}'
+                        },
+                        success: function(response) {
+                            if (response.success) {
+                                // Add new category to the dropdown
+                                $('#categorySelect').append(
+                                    `<option value="${response.category.name}" selected>${response.category.name}</option>`
+                                );
+
+                                // Close modal and reset
+                                $('#addCategoryModal').modal('hide');
+                                $('#addCategoryForm')[0].reset();
+                            }
+                        },
+                        error: function(xhr) {
+                            alert("Error: " + xhr.responseJSON.message);
+                        }
+                    });
+                });
+            </script>
+
         </section>
     @endsection
 </x-admin-dashboard>

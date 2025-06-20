@@ -162,7 +162,7 @@
                                                             <td>₹{{ number_format($product->product_price, 2) }}</td>
                                                             <td>{{ $product->product_total }}</td>
                                                             <td>
-                                                                 <button class="btn btn-sm btn-warning edit-btn"
+                                                                <button class="btn btn-sm btn-warning edit-btn"
                                                                     data-id="{{ $product->id }}">Edit</button>
                                                                 <!-- Delete -->
                                                                 <button class="btn btn-sm btn-danger delete-btn"
@@ -185,60 +185,59 @@
         </section>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
-$(document).ready(function () {
+            $(document).ready(function() {
 
-    // EDIT BUTTON CLICK
-    $('.edit-btn').on('click', function () {
-        let id = $(this).data('id');
-        $.get("/product/edit/" + id, function (data) {
-            $('#edit_id').val(data.id);
-            $('#edit_name').val(data.product_name);
-            $('#edit_price').val(data.product_price);
-            $('#edit_total').val(data.product_total);
-            $('#edit_status').val(data.product_status);
-            $('#editProductModal').modal('show');
-        });
-    });
+                // EDIT BUTTON CLICK
+                $('.edit-btn').on('click', function() {
+                    let id = $(this).data('id');
+                    $.get("/product/edit/" + id, function(data) {
+                        $('#edit_id').val(data.id);
+                        $('#edit_name').val(data.product_name);
+                        $('#edit_price').val(data.product_price);
+                        $('#edit_total').val(data.product_total);
+                        $('#edit_status').val(data.product_status);
+                        $('#editProductModal').modal('show');
+                    });
+                });
 
-    // SUBMIT UPDATE FORM
-    $('#editProductForm').submit(function (e) {
-        e.preventDefault();
-        let id = $('#edit_id').val();
-        $.ajax({
-            url: "/product/update/" + id,
-            method: "POST",
-            data: $(this).serialize(),
-            success: function (res) {
-                $('#editProductModal').modal('hide');
-                location.reload(); // or update the row dynamically
-            },
-            error: function () {
-                alert("Update failed.");
-            }
-        });
-    });
+                // SUBMIT UPDATE FORM
+                $('#editProductForm').submit(function(e) {
+                    e.preventDefault();
+                    let id = $('#edit_id').val();
+                    $.ajax({
+                        url: "/product/update/" + id,
+                        method: "POST",
+                        data: $(this).serialize(),
+                        success: function(res) {
+                            $('#editProductModal').modal('hide');
+                            location.reload(); // or update the row dynamically
+                        },
+                        error: function() {
+                            alert("Update failed.");
+                        }
+                    });
+                });
 
-    // DELETE
-    $('.delete-btn').on('click', function () {
-        if (!confirm("Are you sure?")) return;
-        let id = $(this).data('id');
-        $.ajax({
-            url: "/product/delete/" + id,
-            type: "DELETE",
-            data: {
-                _token: "{{ csrf_token() }}"
-            },
-            success: function (res) {
-                location.reload(); // or remove row from DOM
-            },
-            error: function () {
-                alert("Delete failed.");
-            }
-        });
-    });
+                // DELETE
+                $('.delete-btn').on('click', function() {
+                    if (!confirm("Are you sure?")) return;
+                    let id = $(this).data('id');
+                    $.ajax({
+                        url: "/product/delete/" + id,
+                        type: "DELETE",
+                        data: {
+                            _token: "{{ csrf_token() }}"
+                        },
+                        success: function(res) {
+                            location.reload(); // or remove row from DOM
+                        },
+                        error: function() {
+                            alert("Delete failed.");
+                        }
+                    });
+                });
 
-});
-</script>
-
+            });
+        </script>
     @endsection
 </x-admin-dashboard>

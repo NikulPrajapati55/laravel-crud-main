@@ -59,4 +59,5 @@ class productController extends Controller
         StoreData::destroy($id);
         return response()->json(['status' => 'deleted']);
     }
+
 }
